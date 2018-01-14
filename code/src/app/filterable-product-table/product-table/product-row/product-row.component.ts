@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../product.service';
 
 @Component({
-  selector: 'app-product-row',
+  selector: 'tr[app-product-row]',
   template: `
     <tr>
       <td [ngClass]="{ 'red':product.stocked }">{{ product.name }}</td>

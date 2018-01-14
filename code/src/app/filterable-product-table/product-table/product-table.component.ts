@@ -12,10 +12,12 @@ import { ProductService, Product } from '../../product.service';
         </tr>
       </thead>
       <tbody>
-        <div *ngFor="let product of products">          
-          <app-product-category-row [category]="product.category"></app-product-category-row>
-          <app-product-row [product]="product"></app-product-row>
-        </div>
+        <ng-container *ngFor="let category of categories">
+          <tr app-product-category-row [category]="category"></tr>
+          <ng-container *ngFor="let product of products">
+            <tr app-product-row *ngIf="product.category === category" [product]="product"></tr>
+          </ng-container>
+        </ng-container>
       </tbody>
     </table>
   `,
@@ -23,6 +25,7 @@ import { ProductService, Product } from '../../product.service';
 })
 export class ProductTableComponent implements OnInit {
   @Input() searchText: string;
+  categories: string[] = [];
   products: Product[] = [];
 
   constructor(private productService: ProductService) { }
@@ -30,7 +33,14 @@ export class ProductTableComponent implements OnInit {
   ngOnInit() {
     let lastCategory = null;
     this.productService.getRows()
-      .subscribe(rows => this.products = rows);
+      .subscribe(rows => {
+        this.products = rows;
+        rows.forEach(product => {
+          if (!this.categories.includes(product.category)) {
+            this.categories.push(product.category);
+          }
+        });
+      });
   }
 
 }

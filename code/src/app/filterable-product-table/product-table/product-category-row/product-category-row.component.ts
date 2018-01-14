@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-product-category-row',
+  selector: 'tr[app-product-category-row]',
   template: `
     <tr>
       <th colSpan="2">{{category}}</th>
