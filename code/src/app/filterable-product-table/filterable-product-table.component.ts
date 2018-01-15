@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { PartialObserver } from 'rxjs/Observer';
+import { Subject } from 'rxjs/Subject';
+import { Filter } from './search-bar/search-bar.component';
 
 @Component({
   selector: 'app-filterable-product-table',
   template: `
-    <app-search-bar (updateSearchText)="onSearchChange($event)"></app-search-bar>
-    <app-product-table [searchText]="searchText"></app-product-table>
+    <app-search-bar (filterChange)="onFilterChange($event)"></app-search-bar>
+    <app-product-table [filter]="filter"></app-product-table>
   `,
   styles: []
 })
-export class FilterableProductTableComponent implements OnInit {
-  searchText = '';
-  constructor() { }
+export class FilterableProductTableComponent {
+  filter = new Filter();
 
-  ngOnInit() {
-  }
-
-  onSearchChange(value: string) {
-    this.searchText = value;
+  onFilterChange(filter: Filter) {
+    this.filter = filter;
   }
 
 }

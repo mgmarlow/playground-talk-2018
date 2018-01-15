@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FilterableProductTableComponent } from './filterable-product-table/filterable-product-table.component';
@@ -12,11 +12,11 @@ import { ProductCategoryRowComponent } from './filterable-product-table/product-
 import { ProductRowComponent } from './filterable-product-table/product-table/product-row/product-row.component';
 
 
-
 @NgModule({
   imports: [
     BrowserModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
