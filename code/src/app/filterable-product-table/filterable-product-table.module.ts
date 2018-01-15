@@ -7,6 +7,7 @@ import { FilterableProductTableComponent } from './filterable-product-table.comp
 import { ProductRowComponent } from './product-table/product-row/product-row.component';
 import { ProductCategoryRowComponent } from './product-table/product-category-row/product-category-row.component';
 import { ProductService } from './product.service';
+import { ProductTableFilterPipe } from './product-table-filter.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProductService } from './product.service';
     SearchBarComponent,
     ProductTableComponent,
     ProductCategoryRowComponent,
-    ProductRowComponent
+    ProductRowComponent,
+    ProductTableFilterPipe
   ],
   exports: [
     FilterableProductTableComponent

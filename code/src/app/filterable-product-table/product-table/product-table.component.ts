@@ -17,7 +17,7 @@ import { Filter } from '../search-bar/search-bar.component';
       <tbody>
         <ng-container *ngFor="let category of categories">
           <tr app-product-category-row [category]="category"></tr>
-          <ng-container *ngFor="let product of products">
+          <ng-container *ngFor="let product of (allProducts | productTableFilter:filter)">
             <tr app-product-row *ngIf="product.category === category" [product]="product"></tr>
           </ng-container>
         </ng-container>
@@ -29,7 +29,6 @@ import { Filter } from '../search-bar/search-bar.component';
 export class ProductTableComponent implements OnInit, OnChanges {
   @Input() filter: Filter;
   categories: string[] = [];
-  products: Product[] = [];
 
   private allProducts: Product[] = [];
 
@@ -39,28 +38,25 @@ export class ProductTableComponent implements OnInit, OnChanges {
     this.productService.getRows()
       .subscribe(rows => {
         this.allProducts = rows;
-        this.applyFilter(this.filter);
+        this.categories = this.getCategories(this.filter);
       });
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.applyFilter(changes.filter.currentValue);
+    this.categories = this.getCategories(changes.filter.currentValue);
   }
 
 
-  private applyFilter(filter: Filter) {
-    this.categories = [];
-    this.products = this.allProducts
-      .filter(product => {
-        return product.name.toLowerCase().includes(filter.searchText.toLowerCase())
-               && (filter.showStockedOnly ? product.stocked : true);
-      });
+  private getCategories(filter: Filter): string[] {
+    const categories = [];
       
-    this.products.forEach(product => {
-      if (!this.categories.includes(product.category)) {
-        this.categories.push(product.category)
+    this.allProducts.forEach(product => {
+      if (!categories.includes(product.category)) {
+        categories.push(product.category)
       }
     });
+
+    return categories;
   }
 
 }

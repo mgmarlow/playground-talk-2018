@@ -5,6 +5,7 @@ import 'rxjs/add/observable/of';
 import { sandboxOf } from 'angular-playground';
 import { ProductCategoryRowComponent } from './product-category-row/product-category-row.component';
 import { ProductRowComponent } from './product-row/product-row.component';
+import { ProductTableFilterPipe } from '../product-table-filter.pipe';
 
 // Mock providers and provide them directly to scenarios in a sandbox
 class MockProductService {
@@ -19,7 +20,8 @@ class MockProductService {
 export default sandboxOf(ProductTableComponent, {
   declarations: [
     ProductCategoryRowComponent,
-    ProductRowComponent
+    ProductRowComponent,
+    ProductTableFilterPipe
   ],
   providers: [
     { provide: ProductService, useClass: MockProductService }
