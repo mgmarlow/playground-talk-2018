@@ -1,5 +1,5 @@
 # Angular Playground Talk 2018
-Slides and code from my Angular Playground talk
+Evolve your frontend workflows.
 
 ## Setup
 
@@ -17,3 +17,7 @@ cd ./slides/
 npm i
 npm start
 ```
+
+## Additional Resources
+* [Transcript](https://hackernoon.com/front-end-workflow-re-envisioned-43f800bb01bd)
+* [Angular Playground](http://www.angularplayground.it/)
