@@ -26,10 +26,11 @@ import { Filter } from '../search-bar/search-bar.component';
   `,
   styles: []
 })
-export class ProductTableComponent implements OnInit {
+export class ProductTableComponent implements OnInit, OnChanges {
   @Input() filter: Filter;
   categories: string[] = [];
   products: Product[] = [];
+
   private allProducts: Product[] = [];
 
   constructor(private productService: ProductService) { }
@@ -47,7 +48,7 @@ export class ProductTableComponent implements OnInit {
   }
 
 
-  private applyFilter(filter?: Filter) {
+  private applyFilter(filter: Filter) {
     this.categories = [];
     this.products = this.allProducts
       .filter(product => {
