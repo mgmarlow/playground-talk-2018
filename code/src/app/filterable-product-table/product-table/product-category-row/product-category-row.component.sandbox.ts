@@ -8,6 +8,7 @@ export default sandboxOf(ProductCategoryRowComponent)
       category: 'Products'
     }
   })
+  // Give a scenario as much extra markup as you need
   .add('King Gizzard and the Lizard Wizard Albums', {
     template: `
       <table>

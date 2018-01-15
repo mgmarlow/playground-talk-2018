@@ -3,6 +3,8 @@ import { ProductRowComponent } from "./product-row.component";
 import { Product } from '../../../product.service';
 
 export default sandboxOf(ProductRowComponent)
+  // Provide scenario names that are tied to state to quickly switch
+  // between all possible states of a component
   .add('Stocked', {
     template: `<tr app-product-row [product]="product"></tr>`,
     context: {

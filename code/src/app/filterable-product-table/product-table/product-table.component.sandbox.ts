@@ -6,6 +6,7 @@ import { sandboxOf } from 'angular-playground';
 import { ProductCategoryRowComponent } from './product-category-row/product-category-row.component';
 import { ProductRowComponent } from './product-row/product-row.component';
 
+// Mock providers and provide them directly to scenarios in a sandbox
 class MockProductService {
   getRows(): Observable<Product[]> {
     return Observable.of([
