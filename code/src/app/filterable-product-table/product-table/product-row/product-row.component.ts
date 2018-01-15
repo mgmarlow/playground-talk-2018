@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../../../product.service';
+import { Product } from '../../product.service';
 
 @Component({
   selector: 'tr[app-product-row]',

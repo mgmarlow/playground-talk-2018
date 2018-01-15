@@ -1,5 +1,5 @@
-import { sandboxOf } from "angular-playground";
-import { ProductCategoryRowComponent } from "./product-category-row.component";
+import { sandboxOf } from 'angular-playground';
+import { ProductCategoryRowComponent } from './product-category-row.component';
 
 export default sandboxOf(ProductCategoryRowComponent)
   .add('Default', {

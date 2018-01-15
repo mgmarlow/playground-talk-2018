@@ -1,5 +1,5 @@
 import { ProductTableComponent } from './product-table.component';
-import { ProductService, Product } from '../../product.service';
+import { ProductService, Product } from '../product.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { sandboxOf } from 'angular-playground';

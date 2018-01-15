@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ProductService, Product } from '../../product.service';
+import { ProductService, Product } from '../product.service';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import { Filter } from '../search-bar/search-bar.component';
