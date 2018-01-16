@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FilterableProductTableModule } from './filterable-product-table/filterable-product-table.module';
+import { HelloComponent } from './hello/hello.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FilterableProductTableModule } from './filterable-product-table/filtera
     FilterableProductTableModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent
   ],
   bootstrap: [ AppComponent ]
 })
