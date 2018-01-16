@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Angular Playground</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,133 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h3>Evolve your Frontend Workflow</h3>
+					<p>Graham Marlow</p>
+					<aside class="notes">
+						<ul>
+							<li>Thanks</li>
+							<li>Noticed common approaches to UI from devs</li>
+							<li>Discuss the direction frontend workflows are going</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						#### [mgmarlow](https://github.com/mgmarlow) on Github
+
+						[github.com/mgmarlow/playground-talk-2018](https://github.com/mgmarlow/playground-talk-2018)
+					</textarea>
+					<aside class="notes">
+						All presentation slides and demo code are available on Github
+					</aside>
+				</section>
+
+				<section>
+					<h3>Modern Frontend Toolsets</h3>
+					<ul>
+						<li>React, Redux, create-react-app</li>
+						<li>Angular, Angular CLI</li>
+						<li>Vue, TypeScript-Vue-Starter</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>How many in the room use one of these?</li>
+							<li>Designing UIs with components is a great experience (excluding all of that configuration nonsense)</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3><a href="https://reactjs.org/docs/thinking-in-react.html">Thinking in React</a></h3>
+					<ol>
+						<li>Start with a mock</li>
+						<li>Break the UI into a <a>component hierarchy</a></li>
+						<li>Build a static version (HTML)</li>
+						<li>Identify and add state (logic and data)</li>
+					</ol>
+					<aside class="notes">
+						<b>slow down</b>
+						<ul>
+							<li>Picture completed UI, break it into pieces (components)</li>
+							<li>Code the markup of each component (stateless components)</li>
+							<li>Think about interactions, logic</li>
+							<li>Code interactions, logic (alter HTML as needed)</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>The Mocking Phase</h3>
+					<img data-src="./img/thinking-in-react.png">
+					<aside class="notes">
+						<ul>
+							<li>Each box is its own component, color-coded</li>
+							<li>You can see how intuitive this method of development is</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<img data-src="./img/treecomicbig.jpg">
+					<aside class="notes">
+						<ul>
+							<li>Great approach, but has issues</li>
+							<li>The real world of UI development looks more like this picture</li>
+							<li>
+								CDD painpoint: When the customer inevitably changes their mind, having all of that markup
+								developed is just more code to be rewritten
+							</li>
+							<li>The key is to have a demonstrable product at every point in the dev cycle</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Scenario-driven Development</h3>
+					<ol>
+						<li>Start with a mock</li>
+						<li>Break the UI into a component hierarchy</li>
+						<li>Build a complete, stateful version of the simplest component</li>
+						<li>Repeat #3 until entire UI is finished</li>
+					</ol>
+					<aside class="notes">
+						<ul>
+							<li>Steps 1 and 2 are the same as CDD</li>
+							<li>
+								As components are developed, they are completed with all of their
+								variations accounted for 
+							</li>
+							<li>
+								The difference is at every step in the process, you have a demonstrable
+								component
+							</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Scenario-driven Development</h3>
+					<ul>
+						<li>Fully demo-able UI at every step in development</li>
+						<li>Changes are easier, affect fewer components</li>
+						<li>More isolated, functional components</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>
+								Problem: How can we work on a piece of the UI without having the entire thing
+								structured?
+							</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h1><a href="https://github.com/mgmarlow/playground-talk-2018/tree/master/code">Demo</a></h1>
+				</section>
+
 			</div>
 		</div>
 
@@ -33,6 +158,7 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
+			Reveal.configure({ slideNumber: 'c/t' });
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
