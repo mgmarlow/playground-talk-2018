@@ -1,21 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FilterableProductTableModule } from './filterable-product-table/filterable-product-table.module';
-import { HelloComponent } from './hello/hello.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { ProfileBuilderModule } from './profile-builder/profile-builder.module';
 
 
 @NgModule({
   imports: [
     BrowserModule,
-    FilterableProductTableModule
+    BrowserAnimationsModule,
+    CommonModule,
+    ProfileBuilderModule
   ],
   declarations: [
-    AppComponent,
-    HelloComponent
+    AppComponent
   ],
   bootstrap: [ AppComponent ]
 })

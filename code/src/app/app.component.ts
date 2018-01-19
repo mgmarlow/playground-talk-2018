@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <app-filterable-product-table></app-filterable-product-table>
+    <app-profile-builder></app-profile-builder>
   `,
   styles: []
 })
