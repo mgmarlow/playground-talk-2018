@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+export type Person = { name: string; age: number; address: string; };
+
 @Component({
   selector: 'app-profile-builder',
   template: `
@@ -32,17 +34,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
           </mat-form-field>
           <div>
             <button mat-button matStepperPrevious type="button">Back</button>
-            <button mat-button matStepperNext type="button">Confirm</button>
+            <button mat-button matStepperNext type="button">Next</button>
           </div>
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>Done</ng-template>
-          <button mat-button matStepperNext type="button">Confirm</button>
+          <button (click)="submitForm(form.value)" mat-button type="button">Confirm</button>
         </mat-step>
       </mat-horizontal-stepper>
     </form>
   `,
-  styles: []
+  styles: [`
+    form {
+      width: 1000px;
+      margin: 0 auto;
+    }
+  `]
 })
 export class ProfileBuilderComponent implements OnInit {
   form: FormGroup;
@@ -55,5 +62,10 @@ export class ProfileBuilderComponent implements OnInit {
         age: ['', Validators.required],
         address: ['', Validators.required]
     });
+  }
+
+  submitForm(formValue: Person) {
+    // TODO: collapse into card
+    console.log(formValue)
   }
 }
