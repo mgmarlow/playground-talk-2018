@@ -36,6 +36,9 @@
         "assets",
         "favicon.ico"
       ],
+      "styles": [
+        "styles.css"
+      ],
       "index": "index.html",
       "main": "main.playground.ts",
       "polyfills": "polyfills.ts",

@@ -8,6 +8,8 @@ import { Person } from '../profile-builder.component';
       <mat-card-title>{{ person.name }}</mat-card-title>
       <mat-card-content>
         <p>Age: {{ person.age }}</p>
+        <p *ngIf="person.age > 20">Over 20</p>
+        <p *ngIf="person.age < 20">Under 20</p>
         <p>Address: {{ person.address }}</p>
       </mat-card-content>
     </mat-card>
