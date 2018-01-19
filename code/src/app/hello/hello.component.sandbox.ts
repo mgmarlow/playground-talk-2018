@@ -56,4 +56,6 @@ export default sandboxOf(HelloComponent)
                 color: red;
             }
         `]
-    });
+    })
+
+    // Show how easy it is to copy + paste the above scenario and replace it w/ a different color
