@@ -38,4 +38,4 @@ export default sandboxOf(CollapsedProfileComponent, {
       }
   })
 
-  // copy + paste third example
+  // copy + paste third example, debug the fact that age 20 doesn't show anything
