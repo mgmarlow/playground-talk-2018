@@ -7,13 +7,20 @@ export default sandboxOf(HelloComponent)
         template: `<app-hello name="Playground"></app-hello>`
     })
 
+
+
+
+
     // "context" provides variables to your component
     .add('With Variable', {
         template: `<app-hello [name]="myName"></app-hello>`,
         context: {
-            myName: 'Playground'
+            myName: 'Graham'
         }
     })
+
+    
+
 
     // Add as much extra markup as you need to set up a scenario
     .add('With additional markup', {
@@ -27,6 +34,9 @@ export default sandboxOf(HelloComponent)
         }
     })
 
+
+
+
     // Wire up outputs just as you would in a regular application's template
     .add('With outputs', {
         template: `
@@ -39,6 +49,10 @@ export default sandboxOf(HelloComponent)
             myName: 'Playground'
         }
     })
+
+
+
+
 
     // Even add style to your template
     .add('With style', {
