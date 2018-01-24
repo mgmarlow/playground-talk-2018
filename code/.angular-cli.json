@@ -36,13 +36,14 @@
         "assets",
         "favicon.ico"
       ],
-      "styles": [
-        "styles.css"
-      ],
       "index": "index.html",
       "main": "main.playground.ts",
       "polyfills": "polyfills.ts",
       "tsconfig": "tsconfig.app.json",
+      "serviceWorker": true,
+      "styles": [
+        "styles.css"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -80,9 +81,9 @@
       "spec": false
     },
     "component": {
+      "spec": false,
       "inlineStyle": true,
-      "inlineTemplate": true,
-      "spec": false
+      "inlineTemplate": true
     },
     "directive": {
       "spec": false

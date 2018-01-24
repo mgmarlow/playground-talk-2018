@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+/dist-playground
 
 # dependencies
 /node_modules
